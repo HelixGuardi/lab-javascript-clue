@@ -31,6 +31,15 @@ const suspectsArray = [
     color: "purple"
   },
   {
+    firstName: "Kasandra",
+    lastName: "Scarlet",
+    occupation: "Actor",
+    age: 31,
+    description: "She is an A-list movie star with a dark past",
+    image: "https://www.radiotimes.com/uploads/images/Original/111967.jpg",
+    color: "red"
+  },
+  {
     firstName: "Eleanor",
     lastName: "Peacock",
     occupation: "Socialité",
@@ -149,6 +158,8 @@ function selectRandom(array) {
     return undefined
   };
 
+  console.log("esta array: ", array)
+
   const randomIndex = Math.floor(Math.random() * array.length);
 
   return array[randomIndex];
@@ -166,12 +177,14 @@ function pickMystery() {
   };
 
   // returns an object with three properties: suspect, weapon and room
-  console.log(mysteryObj)
   return mysteryObj;
 }
 
 
 // ITERATION 3
 
-function revealMystery() {}
+function revealMystery(obj) {
+  const revealMsg = `${obj.suspect.firstName} ${obj.suspect.lastName} killed Mr. Boddy using the ${obj.weapon.name} in the ${obj.room.name}!`
+  return revealMsg;
+}
 
